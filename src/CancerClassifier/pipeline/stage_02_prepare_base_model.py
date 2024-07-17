@@ -2,7 +2,7 @@ from CancerClassifier.config.configuration import ConfigurationManager
 from CancerClassifier.components.prepare_base_model import PrepareBaseModel
 from CancerClassifier import logger
 
-STAGE_NAME = "Prepare Base Model"
+STAGE_NAME = "Base Model Preparatin Stage"
 
 
 class PrepareBaseModelTrainingPipeline:
