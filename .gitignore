@@ -166,3 +166,7 @@ artifacts/*
 notes.md
 workflow.md
 research/
+secret.py
+mlruns/
+inputImage.jpg
+

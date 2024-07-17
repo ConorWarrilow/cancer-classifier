@@ -4,7 +4,8 @@ from CancerClassifier.constants import *
 from CancerClassifier.utils.common import read_yaml, create_directories
 from CancerClassifier.entity.config_entity import (DataIngestionConfig, 
                                                    PrepareBaseModelConfig, 
-                                                   TrainingConfig)
+                                                   TrainingConfig,
+                                                   EvaluationConfig)
 
 
 class ConfigurationManager:
@@ -14,6 +15,7 @@ class ConfigurationManager:
         self.config = read_yaml(config_filepath)
         self.params = read_yaml(params_filepath)
         create_directories([self.config.artifacts_root]) # creating artifacts directory
+
 
 
     def get_data_ingestion_config(self) -> DataIngestionConfig:
@@ -27,6 +29,7 @@ class ConfigurationManager:
         
         return data_ingestion_config
     
+
 
     def get_prepare_base_model_config(self) -> PrepareBaseModelConfig:
         config = self.config.prepare_base_model
@@ -46,6 +49,7 @@ class ConfigurationManager:
 
         return prepare_base_model_config
     
+
 
     def get_training_config(self) -> TrainingConfig:
         training = self.config.training
@@ -68,3 +72,15 @@ class ConfigurationManager:
         )
 
         return training_config
+    
+
+    def get_evaluation_config(self) -> EvaluationConfig:
+        eval_config = EvaluationConfig(
+            path_of_model = "artifacts/training/model.h5",
+            training_data = "artifacts/data_ingestion/Chest-CT-Scan-data",
+            mlflow_uri = "https://dagshub.com/ConorWarrilow/cancer-classifier-app.mlflow",
+            all_params = self.params,
+            params_image_size = self.params.IMAGE_SIZE,
+            params_batch_size = self.params.BATCH_SIZE
+        )
+        return eval_config
