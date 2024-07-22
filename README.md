@@ -31,7 +31,10 @@ src file is structured as follows:
             └── common.py<br>
 
 components consists of the main steps in our pipeline
+
 config contains our configuration class
+
 entity contains the configuration parameters to be applied at each stage of the pipeline
+
 pipeline simply contains code to run through the pipeline
 
