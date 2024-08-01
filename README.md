@@ -38,5 +38,5 @@ config contains our configuration class
 
 entity contains the configuration parameters to be applied at each stage of the pipeline
 
-pipeline simply contains code to run through the pipeline
+pipeline simply contains code to run through the pipeline 
 
