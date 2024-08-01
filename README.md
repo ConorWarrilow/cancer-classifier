@@ -1,8 +1,6 @@
 # Cancer Classification App
 
-This repo contains the code required to design, containerize and launch a machine learning application to an aws EC2 instance. DVC is used to track versioning, while mlflow is used for model tracking/evaluation. Flask is then used (extremely basic template) to create the front end for users.
-
-src file is structured as follows:
+This repo contains the code required to design, containerize and launch a machine learning application to an aws EC2 instance. DVC is used to track versioning, while mlflow is used for model tracking/evaluation. Flask is then used (extremely basic template) to create the front end for users. I still to finish the readme explaining how to run the application, I'll get to it eventually. The src directory containing the main components is as follows:
 
 .<br>
 └── src/<br>
